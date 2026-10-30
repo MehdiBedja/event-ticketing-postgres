@@ -1,6 +1,6 @@
 # Event Reservation Database · PostgreSQL + CI/CD
 
-[![SQL tests](https://github.com/MehdiBedja/SGBD/actions/workflows/sql-tests.yml/badge.svg)](https://github.com/MehdiBedja/SGBD/actions/workflows/sql-tests.yml)
+[![SQL tests](https://github.com/MehdiBedja/event-ticketing-postgres/actions/workflows/sql-tests.yml/badge.svg)](https://github.com/MehdiBedja/event-ticketing-postgres/actions/workflows/sql-tests.yml)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white)
 ![Flyway](https://img.shields.io/badge/migrations-Flyway-CC0200)
 ![Jenkins](https://img.shields.io/badge/CI%2FCD-Jenkins-D24939?logo=jenkins&logoColor=white)
