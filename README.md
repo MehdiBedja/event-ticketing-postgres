@@ -1,11 +1,6 @@
-# Event Reservation Database · PostgreSQL + CI/CD
+# Event ticketing database (PostgreSQL)
 
-[![SQL tests](https://github.com/MehdiBedja/event-ticketing-postgres/actions/workflows/sql-tests.yml/badge.svg)](https://github.com/MehdiBedja/event-ticketing-postgres/actions/workflows/sql-tests.yml)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white)
-![Flyway](https://img.shields.io/badge/migrations-Flyway-CC0200)
-![Jenkins](https://img.shields.io/badge/CI%2FCD-Jenkins-D24939?logo=jenkins&logoColor=white)
-
-The database layer of an event ticketing platform (users, venues, seat types, events, reservations, payments) built for the SGBDA 2024 database course. Business logic lives in **PL/pgSQL functions**, schema changes are versioned with **Flyway**, and a **Jenkins pipeline** deploys migrations to a PostgreSQL instance hosted on **Render**.
+The database layer of an event ticketing platform (users, venues, seat types, events, reservations, payments) built for the SGBDA 2024 database course. Business logic lives in PL/pgSQL functions, schema changes are versioned with Flyway, and a Jenkins pipeline deploys migrations to a PostgreSQL instance hosted on Render.
 
 ## Schema
 
@@ -96,4 +91,4 @@ psql -d sgbd -v ON_ERROR_STOP=1 -f tests/test_functions.sql
 
 ## Author
 
-**Mahdi Bedja** · [Portfolio](https://mehdibedja.github.io) · [LinkedIn](https://www.linkedin.com/in/mahdi-bedja-0b94031b3/)
+Mahdi Bedja · [Portfolio](https://mehdibedja.github.io) · [LinkedIn](https://www.linkedin.com/in/mahdi-bedja-0b94031b3/)
