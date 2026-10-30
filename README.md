@@ -7,8 +7,6 @@
 
 The database layer of an event ticketing platform (users, venues, seat types, events, reservations, payments) built as a university DBMS project (SGBDA 2024, ESI Algiers). Business logic lives in **PL/pgSQL functions**, schema changes are versioned with **Flyway**, and a **Jenkins pipeline** deploys migrations to a PostgreSQL instance hosted on **Render**.
 
-It is the database behind the [Reservation app](https://github.com/MehdiBedja/Reservation-app-frontend) ([backend](https://github.com/MehdiBedja/Reservation-app-backend)).
-
 ## Schema
 
 ```mermaid
