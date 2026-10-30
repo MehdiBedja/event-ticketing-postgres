@@ -5,7 +5,7 @@
 ![Flyway](https://img.shields.io/badge/migrations-Flyway-CC0200)
 ![Jenkins](https://img.shields.io/badge/CI%2FCD-Jenkins-D24939?logo=jenkins&logoColor=white)
 
-The database layer of an event ticketing platform (users, venues, seat types, events, reservations, payments) built as a university DBMS project (SGBDA 2024, ESI Algiers). Business logic lives in **PL/pgSQL functions**, schema changes are versioned with **Flyway**, and a **Jenkins pipeline** deploys migrations to a PostgreSQL instance hosted on **Render**.
+The database layer of an event ticketing platform (users, venues, seat types, events, reservations, payments) built for the SGBDA 2024 database course. Business logic lives in **PL/pgSQL functions**, schema changes are versioned with **Flyway**, and a **Jenkins pipeline** deploys migrations to a PostgreSQL instance hosted on **Render**.
 
 ## Schema
 
