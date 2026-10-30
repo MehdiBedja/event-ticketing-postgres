@@ -1,25 +1,22 @@
 pipeline {
     agent any
-    
+
+    // Database connection details are stored in Jenkins, not in the repository.
+    // Create them under Manage Jenkins > Credentials:
+    //   postgres-jdbc-url : "Secret text", e.g. jdbc:postgresql://<host>/<database>
+    //   postgres-login    : "Username with password"
+    environment {
+        DB_URL = credentials('postgres-jdbc-url')
+    }
+
     stages {
         stage('Flyway Migration') {
             steps {
-                script {
-                    // Replace these placeholders with your actual database connection details
-                    def url = 'jdbc:postgresql://dpg-cp2jb6fsc6pc73a6qem0-a.oregon-postgres.render.com/eventdatabase_gq69'
-                    def user = 'eventdatabase_gq69_user'
-                    def password = 'oiKQmXkS4srpTlTK8TZgtqJkM0bo8X2P'
-                    
-                    // Construct the Flyway command
-                    def flywayCommand = "flyway -url=jdbc:postgresql://dpg-cp2jb6fsc6pc73a6qem0-a.oregon-postgres.render.com/eventdatabase_gq69 -user=eventdatabase_gq69_user -password=oiKQmXkS4srpTlTK8TZgtqJkM0bo8X2P migrate"
-                    
-
-
-
-                    
-                    // Execute the Flyway command using bat on Windows
-                    bat "${flywayCommand}"
-
+                withCredentials([usernamePassword(credentialsId: 'postgres-login',
+                                                  usernameVariable: 'DB_USER',
+                                                  passwordVariable: 'DB_PASSWORD')]) {
+                    // Windows agent
+                    bat 'flyway -url=%DB_URL% -user=%DB_USER% -password=%DB_PASSWORD% migrate'
                 }
             }
         }

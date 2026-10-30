@@ -65,6 +65,13 @@ flowchart LR
     F --> R[(PostgreSQL<br/>on Render)]
 ```
 
+## Jenkins setup
+
+The pipeline reads the database connection from Jenkins credentials, so nothing secret is stored in the repository. Create two credentials under Manage Jenkins > Credentials:
+
+- `postgres-jdbc-url` (secret text): `jdbc:postgresql://<host>/<database>`
+- `postgres-login` (username with password)
+
 ## Run locally
 
 ```bash
